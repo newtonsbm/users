@@ -9,6 +9,7 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
+<?php echo $this->element('Users.Users/sidebar'); ?>
 <div class="users index">
 	<h2><?php echo __d('users', 'Users'); ?></h2>
 
@@ -18,7 +19,7 @@
 	));
 	?></p>
 
-	<table cellpadding="0" cellspacing="0">
+	<table class="table">
 	<tr>
 		<th><?php echo $this->Paginator->sort('username'); ?></th>
 		<th><?php echo $this->Paginator->sort('created'); ?></th>
@@ -43,4 +44,3 @@
 	</table>
 	<?php echo $this->element('Users.pagination'); ?>
 </div>
-<?php echo $this->element('Users.Users/sidebar'); ?>

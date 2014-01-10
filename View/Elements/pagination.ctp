@@ -9,10 +9,37 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<div class="paging">
-	<?php
-	echo $this->Paginator->prev('< ' . __d('users', 'previous'), array(), null, array('class' => 'prev disabled'));
-	echo $this->Paginator->numbers(array('separator' => ''));
-	echo $this->Paginator->next(__d('users', 'next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-</div>
+<?php $params = $this->Paginator->params(); ?>
+<?php $params['limit'] = 5 ?>
+    <ul class="pagination">
+            <?php
+                echo $this->paginator->prev('&larr;', array(
+                    'class' => 'prev',
+                    'tag' => 'li',
+                    'escape' => false
+                ), '<a onclick="return false;">&larr;</a>', array(
+                    'class' => 'prev disabled',
+                    'tag' => 'li',
+                    'escape' => false
+                ));
+                echo $this->paginator->numbers(array(
+                    'separator' => '',
+                    'tag' => 'li',
+                    'currentClass' => 'active',
+                    'currentTag' => 'a',
+                    'modulus' => 4,
+                    'ellipsis' => '<li class="disabled"><a onclick="return false;">...</a></li>',
+                    'first' => 2,
+                    'last' => 2
+                ));
+                echo $this->paginator->next('&rarr;', array(
+                    'class' => 'next',
+                    'tag' => 'li',
+                    'escape' => false
+                ), '<a onclick="return false;">&rarr;</a>', array(
+                    'class' => 'next disabled',
+                    'tag' => 'li',
+                    'escape' => false
+                )); 
+            ?>
+</ul>

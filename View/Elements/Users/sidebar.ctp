@@ -1,5 +1,5 @@
-<div class="actions">
-	<ul>
+<div class="navbar navbar-default" role="navigation">
+	<ul class="nav navbar-nav">
 		<?php if (!$this->Session->read('Auth.User.id')) : ?>
 			<li><?php echo $this->Html->link(__d('users', 'Login'), array('action' => 'login')); ?></li>
             <?php if (!empty($allowRegistration) && $allowRegistration)  : ?>
@@ -16,3 +16,4 @@
         <?php endif; ?>
 	</ul>
 </div>
+

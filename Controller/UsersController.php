@@ -225,7 +225,6 @@ class UsersController extends UsersAppController {
 				'scope' => array(
 					$this->modelClass . '.active' => 1,
 					$this->modelClass . '.email_verified' => 1)));
-
 		$this->Auth->loginRedirect = '/';
 		$this->Auth->logoutRedirect = array('plugin' => Inflector::underscore($this->plugin), 'controller' => 'users', 'action' => 'login');
 		$this->Auth->loginAction = array('admin' => false, 'plugin' => Inflector::underscore($this->plugin), 'controller' => 'users', 'action' => 'login');

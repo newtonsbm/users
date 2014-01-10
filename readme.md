@@ -1,4 +1,10 @@
-# Users Plugin for CakePHP #
+# Bootstrap 3.0 Version of Users Plugin for CakePHP #
+
+## Main differences from CakeDC ##
+
+For now we just adapt the templates to use bootstrap 3.0
+
+## Intro ##
 
 for cake 2.x
 

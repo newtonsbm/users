@@ -9,20 +9,33 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
+<?php echo $this->element('Users.Users/admin_sidebar'); ?>
 <div class="users index">
 	<h2><?php echo __d('users', 'Users'); ?></h2>
-
 	<h3><?php echo __d('users', 'Filter'); ?></h3>
-	<?php 
-	echo $this->Form->create($model, array('action' => 'index'));
-		echo $this->Form->input('username', array('label' => __d('users', 'Username')));
-		echo $this->Form->input('email', array('label' => __d('users', 'Email')));
-	echo $this->Form->end(__d('users', 'Search'));
+	<?php echo $this->Form->create($model, array('action' => 'index','class'=>'form-inline','role'=>'form')); ?>
+		<?php echo $this->Form->input('username', array(
+			'label' => array('text'=>__d('users', 'Username'),'class'=>'sr-only'),
+			'div'=>'form-group',
+			'class'=>'form-control',
+			'placeholder'=>__d('users','Username'),
+			));
+		?>	
+		<?php echo $this->Form->input('email', array(
+			'label' => array(__d('users', 'Email'),'class'=>'sr-only'),
+			'div'=>'form-group',
+			'class'=>'form-control',
+			'placeholder'=>__d('users','Email'),
+			));
+		?>
+		<?php 
+		echo $this->Form->button(__d('users', 'Search'),array('div'=>'form-control','class'=>'btn btn-default'));
+	echo $this->Form->end();
 	?>
 
 	<?php echo $this->element('Users.paging'); ?>
 	<?php echo $this->element('Users.pagination'); ?>
-	<table cellpadding="0" cellspacing="0">
+	<table class='table'>
 		<tr>
 			<th><?php echo $this->Paginator->sort('username'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
@@ -65,4 +78,3 @@
 	</table>
 	<?php echo $this->element('Users.pagination'); ?>
 </div>
-<?php echo $this->element('Users.Users/admin_sidebar'); ?>

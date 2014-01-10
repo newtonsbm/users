@@ -9,9 +9,10 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
+<?php echo $this->element('Users.Users/admin_sidebar'); ?>
 <div class="users view">
 	<h2><?php echo __d('users', 'User'); ?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"'; ?>
+	<dl class='dl-horizontal'><?php $i = 0; $class = ' class="altrow"'; ?>
 		<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Username'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
 			<?php echo $user[$model]['username']; ?>
@@ -29,4 +30,3 @@
 		</dd>
 	</dl>
 </div>
-<?php echo $this->element('Users.Users/admin_sidebar'); ?>

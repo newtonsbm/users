@@ -1,5 +1,5 @@
-<div class="actions">
-	<ul>
+<div class="navbar navbar-default" role="navigation">
+	<ul class="nav navbar-nav">
 		<li><?php echo $this->Html->link(__d('users', 'Logout'), array('admin' => false, 'action' => 'logout')); ?>
 		<li><?php echo $this->Html->link(__d('users', 'My Account'), array('admin' => false, 'action' => 'edit')); ?>
 		<li>&nbsp;</li>

@@ -29,6 +29,7 @@ class User extends UsersAppModel {
  */
 	public $name = 'User';
 
+
 /**
  * Additional Find methods
  *

@@ -9,21 +9,34 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
+<?php echo $this->element('Users.Users/sidebar'); ?>
 <div class="users form">
 <h2><?php echo __d('users', 'Change your password'); ?></h2>
 <p><?php echo __d('users', 'Please enter your old password because of security reasons and then your new password twice.'); ?></p>
 	<?php
-		echo $this->Form->create($model, array('action' => 'change_password'));
+		echo $this->Form->create($model, array('action' => 'change_password','class'=>'form-horizontal','role'=>'form'));
 		echo $this->Form->input('old_password', array(
-			'label' => __d('users', 'Old Password'),
+			'label' => array('label'=>__d('users', 'Old Password'),'class'=>'control-label col-md-2'),
+			'class' => 'form-control',
+			'div' => 'form-group',
+			'between' => '<div class="col-md-4">',
+			'after'=>'</div>',
 			'type' => 'password'));
 		echo $this->Form->input('new_password', array(
-			'label' => __d('users', 'New Password'),
+			'label' => array('label'=>__d('users', 'New Password'),'class'=>'control-label col-md-2'),
+			'class' => 'form-control',
+			'div' => 'form-group',
+			'between' => '<div class="col-md-4">',
+			'after'=>'</div>',
 			'type' => 'password'));
 		echo $this->Form->input('confirm_password', array(
-			'label' => __d('users', 'Confirm'),
+			'label' => array('label'=>__d('users', 'Confirm'),'class'=>'control-label col-md-2'),
+			'class' => 'form-control',
+			'div' => 'form-group',
+			'between' => '<div class="col-md-4">',
+			'after'=>'</div>',
 			'type' => 'password'));
-		echo $this->Form->end(__d('users', 'Submit'));
+		echo $this->Form->submit(__d('users', 'Submit'),array('class'=>'btn btn-primary'));
+		echo $this->Form->end();
 	?>
 </div>
-<?php echo $this->element('Users.Users/sidebar'); ?>
