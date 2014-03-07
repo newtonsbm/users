@@ -671,7 +671,11 @@ class User extends UsersAppModel {
 		} else {
 			$postData[$this->alias]['email_verified'] = 1;
 		}
-		$postData[$this->alias]['active'] = 1;
+		if (!is_null(Configure::read('Users.manualActivation')) && Configure::read('Users.manualActivation')===true) {
+			$postData[$this->alias]['active'] = 0;
+		}else{
+			$postData[$this->alias]['active'] = 1;
+		}
 		$defaultRole = Configure::read('Users.defaultRole');
 		if ($defaultRole) {
 			$postData[$this->alias]['role'] = $defaultRole;

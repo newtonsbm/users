@@ -205,6 +205,14 @@ class UsersController extends UsersAppController {
 		if (Configure::read('Users.disableDefaultAuth') === true) {
 			return;
 		}
+		//prevent acces to admin routes if not admin
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+//	        if ($this->Session->check('Auth.User.role') and 'admin' !== $this->Session->read('Auth.User.role')) {
+	        if(!$this->Session->read('Auth.User.is_admin')) {
+	            $this->Auth->deny('*');
+	            return $this->flash('Non admin access - unauthorized', '/');
+	        }
+    	} 
 
 		$this->Auth->allow('add', 'reset', 'verify', 'logout', 'view', 'reset_password', 'login', 'resend_verification');
 

@@ -33,15 +33,20 @@
                         'label' => __d('users', 'Role'), 'values' => $roles));
                 }
                 echo $this->Form->input('is_admin', array(
-						'label' => array('text'=>__d('users', 'Is Admin'),'class'=>'control-label'),
-						'div' => 'form-group',
-						'before'=> '<div class="col-md-4 col-md-offset-2"><div class="checkbox">',
-						'after' => '</div></div>'));
-                    echo $this->Form->input('active', array(
-						'label' => array('text'=>__d('users', 'Active'),'class'=>'control-label'),
-						'div' => 'form-group',
-						'before'=> '<div class="col-md-4 col-md-offset-2"><div class="checkbox">',
-						'after' => '</div></div>'));
+					'label' => array('text'=>__d('users', 'Is Admin'),'class'=>'control-label'),
+					'div' => 'form-group',
+					'before'=> '<div class="col-md-4 col-md-offset-2"><div class="checkbox">',
+					'after' => '</div></div>'));
+               echo $this->Form->input('active', array(
+					'label' => array('text'=>__d('users', 'Active'),'class'=>'control-label'),
+					'div' => 'form-group',
+					'before'=> '<div class="col-md-4 col-md-offset-2"><div class="checkbox">',
+					'after' => '</div></div>'));
+                echo $this->Form->input('email_verified', array(
+					'label' => array('text'=>__d('users', 'Email verified'),'class'=>'control-label'),
+					'div' => 'form-group',
+					'before'=> '<div class="col-md-4 col-md-offset-2"><div class="checkbox">',
+					'after' => '</div></div>'));
 			?>
 		</fieldset>
 	<?php echo $this->Form->submit('Submit',array('class'=>'btn btn-primary')); ?>
