@@ -15,5 +15,10 @@
             <li><?php echo $this->Html->link(__d('users', 'List Users'), array('action'=>'index'));?></li>
         <?php endif; ?>
 	</ul>
+	<?php if ($this->Session->read('Auth.User.id')) : ?>
+		<ul class="nav navbar-nav pull-right">
+			<li><?php echo $this->Html->link(__d('users',"logged as "). $this->Session->read('Auth.User.username'), array('action'=>'index')) ?></li>
+		</ul>
+	<?php endif; ?>
 </div>
 

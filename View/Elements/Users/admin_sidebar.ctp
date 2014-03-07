@@ -8,4 +8,7 @@
 		<li>&nbsp;</li>
 		<li><?php echo $this->Html->link(__d('users', 'Frontend'), array('admin' => false, 'action'=>'index')); ?></li>
 	</ul>
+	<ul class="nav navbar-nav pull-right">
+		<li><?php echo $this->Html->link(__d('users',"logged as "). $this->Session->read('Auth.User.username'), array('action'=>'index')) ?></li>
+	</ul>
 </div>
