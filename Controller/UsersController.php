@@ -576,6 +576,8 @@ class UsersController extends UsersAppController {
 				$this->Session->setFlash($e->getMessage());
 			}
 		}
+		$allowRegistration = Configure::read('Users.allowRegistration');
+		$this->set('allowRegistration', (is_null($allowRegistration) ? true : $allowRegistration));
 	}
 
 /**
