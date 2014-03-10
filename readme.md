@@ -5,9 +5,11 @@
 We are trying to create a more plug and play version of cake dc users plugins with very little customization
 
 Main differences:
-* Adapt the templates to use bootstrap 3.0
+* Views using bootstrap 3.0
 * Allow manual activation of users
-* Prevent not admin users to access admin routes
+* Registered users cant access admin routes
+* Link do resend verification
+* Simple profile 
 
 ### Manual Activation
 
