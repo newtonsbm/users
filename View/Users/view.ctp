@@ -9,7 +9,6 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<?= d($user) ?>
 <?php echo $this->element('Users.Users/sidebar'); ?>
 <div class="users view">
 <h2><?php echo __d('users', 'User'); ?></h2>
