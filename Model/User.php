@@ -29,6 +29,8 @@ class User extends UsersAppModel {
  */
 	public $name = 'User';
 
+	public $hasOne = array('Users.Detail');
+
 
 /**
  * Additional Find methods

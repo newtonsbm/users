@@ -278,9 +278,30 @@ class UsersController extends UsersAppController {
  * @param string $id User ID
  * @return void
  */
-	public function edit() {
+	public function edit($slug = null) {
 		// @todo replace this with something better than the user details that were removed
+		try {
+			$this->set('user', $this->{$this->modelClass}->view($slug));
+			if($this->{$this->modelClass}->Detail->hasAny(array('user_id'=>$this->Auth->user('id')))){
+				$detail = $this->{$this->modelClass}->Detail->find('first',array('user_id'=>$this->Auth->user('id')));
+			    if(!$this->request->data) {
+			        $this->request->data = $detail;
+			    }
+			}
+
+			if ($this->request->is('post')) {
+				$this->Session->setFlash(__d('users', 'Your profile has been updated'));
+				$this->request->data['Detail']['user_id'] = $this->Auth->user('id');
+				$this->{$this->modelClass}->Detail->save($this->request->data);
+			}else{
+
+			}
+		} catch (Exception $e) {
+			$this->Session->setFlash($e->getMessage());
+			$this->redirect('/');
+		}
 	}
+
 
 /**
  * Admin Index

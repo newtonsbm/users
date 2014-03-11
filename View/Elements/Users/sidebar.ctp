@@ -8,7 +8,7 @@
             <?php endif; ?>
 		<?php else : ?>
 			<li><?php echo $this->Html->link(__d('users', 'Logout'), array('action' => 'logout')); ?>
-			<li><?php echo $this->Html->link(__d('users', 'My Account'), array('action' => 'edit')); ?>
+			<li><?php echo $this->Html->link(__d('users', 'My Account'), array('action' => 'edit',$this->Session->read('Auth.User.slug'))); ?>
 			<li><?php echo $this->Html->link(__d('users', 'Change password'), array('action' => 'change_password')); ?>
 		<?php endif ?>
 		<?php if($this->Session->read('Auth.User.is_admin')) : ?>
