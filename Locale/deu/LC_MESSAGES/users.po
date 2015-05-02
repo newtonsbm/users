@@ -245,7 +245,7 @@ msgid "The email address does not exist in the system"
 msgstr "Diese Email-Adresse existiert nicht im System"
 
 #: /models/user.php:520
-msgid "Your account is already authenticaed."
+msgid "Your account is already authenticated."
 msgstr "Dein Account ist bereits bestätigt."
 
 #: /models/user.php:525
@@ -721,3 +721,6 @@ msgstr "Resette Dein Passwort"
 msgid "Search for users"
 msgstr "Nach Benutzern suchen"
 
+#: View/Users/login.ctp:26
+msgid "I forgot my password"
+msgstr "Ich habe mein Passwort vergessen"
