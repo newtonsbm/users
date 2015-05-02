@@ -1,3 +1,26 @@
+Bootstrap 3.0 Version of Users Plugin for CakePHP
+=================================================
+
+Main differences from CakeDC users plugin
+
+We are trying to create a more plug and play version of cake dc users plugins with very little customization
+
+Main differences:
+
+Views using bootstrap 3.0
+Allow manual activation of users
+Registered users cant access admin routes
+Link do resend verification
+Simple profile
+
+Manual Activation
+-----------------
+
+This option enforces a manual activation by the system administration after a user register
+
+Configure::write('Users.manualActivation',true);
+
+
 CakeDC Users Plugin
 ===================
 
